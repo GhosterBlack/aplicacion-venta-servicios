@@ -1,0 +1,18 @@
+@startuml casoUso
+scale 800 width
+left to right direction
+skinparam packageStyle rect
+actor "Servidor" as server
+rectangle Registro {
+    server -- (Registrar)
+    (Registrar) .> (Seleccionar profecion): include
+    (Seleccionar profecion) .> (Seleccionar Precios): include
+    (Seleccionar Precios) .> (Editar Perfil): include
+}
+
+rectangle "Inicio Sesion" {
+    server -- (Iniciar Sesion)
+    (Iniciar Sesion) .> (Modificar Perfil): include
+}
+
+@enduml
